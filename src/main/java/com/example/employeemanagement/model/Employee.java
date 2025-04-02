@@ -1,13 +1,16 @@
 package com.example.employeemanagement.model;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "employees")
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Employee {
 
     @Id
@@ -31,4 +34,7 @@ public class Employee {
 
     @Column(nullable = false)
     private Double salary;
+
+
+
 }

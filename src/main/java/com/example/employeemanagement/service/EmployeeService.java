@@ -16,8 +16,8 @@ public class EmployeeService {
     }
 
     // Create Employee
-    public Employee createEmployee(Employee employee) {
-        return employeeRepository.save(employee);  //orm commands to add data to the mysql database
+    public void createEmployee(Employee employee) {
+        employeeRepository.save(employee);
     }
 
     // Get All Employees
@@ -50,4 +50,4 @@ public class EmployeeService {
         employeeRepository.deleteById(id);
         return false;
     }
-}
+} 
